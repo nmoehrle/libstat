@@ -24,7 +24,8 @@ moments(std::vector<T> const & vec) {
     static_assert(std::is_floating_point<T>::value,
         "Floating point type required");
 
-    if (vec.size() == 0) throw;
+    if (vec.size() == 0)
+        throw std::runtime_error("Cannot compute moments of empty vector.");
     if (vec.size() == 1) return std::make_pair(vec[0], T(0));
 
     double sum = 0, sqsum = 0, k = vec[0];
