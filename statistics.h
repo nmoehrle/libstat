@@ -38,7 +38,7 @@ moments(std::vector<T> const & vec) {
     double n = vec.size();
 
     T mean = sum / n + k;
-    T var = (sqsum - (sum * sum) / n) / (n - 1);
+    T var = (sqsum - SQR(sum) / n) / (n - 1);
 
     return std::make_pair(mean, var);
 }
